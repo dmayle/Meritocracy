@@ -19,6 +19,8 @@ Use this to generate contribution statistics and enable a meritocracy for your o
       zip_safe=True,
       install_requires=[
           # -*- Extra requirements: -*-
+          'SQLAlchemy',
+          'mercurial>=1.1',
       ],
       entry_points="""
       # -*- Entry points: -*-
