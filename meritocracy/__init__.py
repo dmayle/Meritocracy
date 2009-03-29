@@ -42,7 +42,9 @@ class Meritocracy(object):
                 meta.Session.add(user)
             contribution = models.Contribution(repo_id=repo.id, user_id=user.id,revision=revstring)
             meta.Session.add(contribution)
-    def contributions(self, username):
+    def contributions(self, username, cutoffdate):
+        """Get the number of recent contributions that a user has made"""
+        # cutoffdate does not currently work, we need to fix that.
         user = meta.Session.query(models.User).filter(models.User.username==username).first()
         if not user:
             return 0
